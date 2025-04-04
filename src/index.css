@@ -1,0 +1,126 @@
+/* Base Styles and Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  :root {
+    --primary-color: #4a6cf7;
+    --primary-dark: #3a57d7;
+    --secondary-color: #f97316;
+    --text-color: #333;
+    --text-light: #666;
+    --bg-color: #fff;
+    --bg-light: #f9fafb;
+    --bg-dark: #1f2937;
+    --text-dark: #f3f4f6;
+    --border-color: #e5e7eb;
+    --success-color: #10b981;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+  }
+  
+  body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  body.dark-mode {
+    --text-color: #f3f4f6;
+    --text-light: #9ca3af;
+    --bg-color: #111827;
+    --bg-light: #1f2937;
+    --bg-dark: #0f172a;
+    --border-color: #374151;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+  }
+  
+  a:hover {
+    color: var(--primary-dark);
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+  
+  /* Layout */
+  .portfolio-main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .portfolio-content {
+    flex: 1;
+  }
+  
+  section {
+    padding: 100px 0;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  /* Center Alignment Fixes */
+  .hero-section,
+  .about-section,
+  .projects-section,
+  .experience-section,
+  .education-section,
+  .contact-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .section-header,
+  .title,
+  .hero-description,
+  .about-text {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    section {
+      padding: 70px 0;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    section {
+      padding: 50px 1rem;
+    }
+  }

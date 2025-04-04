@@ -1,0 +1,129 @@
+.education-section {
+    background-color: var(--bg-light);
+    position: relative;
+  }
+  
+  .dark-theme .education-section {
+    background-color: var(--bg-dark);
+  }
+  
+  .education-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .education-timeline::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    background-color: var(--primary-color);
+  }
+  
+  .education-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s forwards;
+    opacity: 0;
+  }
+  
+  .education-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--bg-color);
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  .dark-theme .education-item::before {
+    background-color: var(--bg-dark);
+  }
+  
+  .education-period {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
+  .education-content {
+    padding: 2rem;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+  }
+  
+  .dark-theme .education-content {
+    background-color: var(--bg-light);
+  }
+  
+  .education-content:hover {
+    transform: translateY(-5px);
+  }
+  
+  .education-degree {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+  }
+  
+  .education-institution {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .education-description {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+  }
+  
+  .certificates-list h5 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .certificates-list ul {
+    list-style: none;
+    margin-left: 1rem;
+  }
+  
+  .certificates-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .certificates-list li::before {
+    content: '🏆';
+    position: absolute;
+    left: 0;
+    top: 2px;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Media Queries */
+  @media (max-width: 576px) {
+    .education-item { padding-left: 30px; }
+    .education-timeline::after { left: 0; }
+    .education-item::before { left: -8px; }
+  }

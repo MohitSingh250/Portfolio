@@ -1,0 +1,124 @@
+.project-card {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .project-card.featured {
+    grid-column: span 2;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .project-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 230px;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .project-card:hover .project-image {
+    transform: scale(1.1);
+  }
+  
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-overlay.hovered,
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+  
+  .project-link {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: var(--transition);
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  
+  .project-overlay.hovered .project-link,
+  .project-card:hover .project-link {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s 0.1s ease, opacity 0.3s 0.1s ease;
+  }
+  
+  .project-link:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .project-info {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+  
+  .project-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    flex: 1;
+  }
+  
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tech-tag {
+    padding: 0.3rem 0.8rem;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .dark-theme .tech-tag {
+    background-color: var(--bg-dark);
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .project-card.featured {
+      grid-column: span 1;
+    }
+  }
